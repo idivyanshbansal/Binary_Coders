@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/popup.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet"
+        href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .card-link {
+            padding: 10px;
+            border: 1px dashed black;
+            border-radius: 10px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        .certificateName {
+            font-size: 14px;
+            text-decoration: underline;
+        }
+
+        .certificateName:hover {
+            color: rgb(0, 128, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Side Bar -->
+    <%- include("./components/sidebar") %>
+
+        <!-- Body -->
+        <div class="bodyContainer">
+
+            <!-- Navbar -->
+            <%- include("./components/header") %>
+
+                <!-- IF CATEGORY == STUDENT -->
+
+                <!-- Update image here -->
+                <div class="col-lg-8 mx-auto ms-auto me-auto p-3 py-md-5">
+                        <img class="rounded-circle profilePic"
+                            src="./images/253852115_369284928277098_6803301368560095943_n.jpg" alt="" srcset="">
+
+                        <hr class="hr mt-5 mb-3">
+                    <main>
+                        <h1 class="fs-1 fw-bolder">
+                            <%= user.profile.name %>
+                        </h1>
+                        <h4 class="mt-5">Student at Chandigarh University</h4>
+                        <h4 class="mt-2"><a href="mailto:<%= user.profile.name %>"><%= user.profile.email %></a></h4>
+
+                        <hr class="hr mt-5 mb-5">
+                        <div class="row">
+                            <div class="col-6">
+                                <h4>Codechef</h4>
+                                <p class="fs-1 fw-bolder text-success"><%= score %> </p>
+                            </div>
+                            <div class="col-6">
+                                <h4>Hackerrank</h4>
+                                <p class="fs-1 fw-bolder text-success">##</p>
+                            </div>
+                            <div class="col-6">
+                                <h4>Leetcode</h4>
+                                <p class="fs-1 fw-bolder text-success">##</p>
+                            </div>
+                            <div class="col-6">
+                                <h4>Codeforces</h4>
+                                <p class="fs-1 fw-bolder text-success">##</p>
+                            </div>
+                        </div>
+
+
+                    </main>
+
+                </div>
+
+
+        </div>
+
+
+
+        <script src="/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+        <script src="/js/script.js"></script>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+
+
+
+        <script>
+            function viewGrades() {
+                // get the clock
+                var viewingElement = document.getElementById('grades');
+
+                // get the current value of the clock's display property
+                var displaySetting = viewingElement.style.display;
+
+                // also get the clock button, so we can change what it says
+                var viewButton = document.getElementById('viewButton');
+
+                // now toggle the clock and the button text, depending on current state
+                if (displaySetting == 'block') {
+                    // clock is visible. hide it
+                    viewingElement.style.display = 'none';
+                    // change button text
+                    viewButton.innerHTML = 'View Grades';
+                }
+                else {
+                    // clock is hidden. show it
+                    viewingElement.style.display = 'block';
+                    // change button text
+                    viewButton.innerHTML = 'Hide Grades';
+                }
+            }
+
+            function viewCertificate() {
+                var viewingElement = document.getElementById('certificates');
+                var displaySetting = viewingElement.style.display;
+                var viewButton = document.getElementById('viewCertificateButton');
+
+                if (displaySetting == 'block') {
+                    // clock is visible. hide it
+                    viewingElement.style.display = 'none';
+                    // change button text
+                    viewButton.innerHTML = '(Show Details)';
+                }
+                else {
+                    // clock is hidden. show it
+                    viewingElement.style.display = 'block';
+                    // change button text
+                    viewButton.innerHTML = '(Hide Details)';
+                }
+            }
+        </script>
+
+</body>
+
+</html>

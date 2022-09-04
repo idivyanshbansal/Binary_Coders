@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/certificate_styles.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/drag.css">
+</head>
+
+<body>
+    <!-- Side Bar -->
+    <%- include("./../components/sidebar") %>
+
+        <!-- Body -->
+        <div class="bodyContainer">
+
+            <!-- Navbar -->
+            <%- include("./../components/header") %>
+
+                <div class="container col-lg-12" style="max-width: 730px;">
+
+                    <div class="pageHeading">
+                        <h1>Add Your Achievements</h1>
+                    </div>
+
+                    <form action="/achievements-registration" method="POST">
+                        <!-- Achievement name -->
+                        <div class="input-box mb-3">
+                            <span class="details">Achievement: <span style="color:red">*</span> </span>
+                            <input type="text" class="form-control" name="title" placeholder="Enter Your Achievement"
+                                required>
+                        </div>
+
+                        <div class="input-box mb-3">
+                            <span class="details">Description: <span style="color:red">*</span> </span>
+                            <textarea class="form-control" id="textAreaExample" rows="4"
+                                placeholder="Describe your Achievement" name="description"></textarea>
+                            <!-- <input type="text" class="form-control" name="description"
+                                placeholder="Description of your Achievement" id="textAreaExample" required> -->
+                        </div>
+
+                        <div class="input-box mb-3">
+                            <span class="details">Rank or position secured: </span>
+                            <input type="text" class="form-control" name="rank"
+                                placeholder="Enter the rank or position of your Achievement (Optional) ">
+                        </div>
+
+
+                        <br>
+
+                        <div class="ms-auto me-auto" style="width: fit-content;">
+                            <button class="btn btn-danger" type="submit">Submit</button>
+                        </div>
+                        <br><br>
+                    </form>
+                </div>
+
+
+        </div>
+
+        <script src="/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+        <script src="/js/script.js"></script>
+
+
+        <!-- Drag and drop -->
+        <script src="/js/dragscript.js"></script>
+
+</body>
+
+</html>
